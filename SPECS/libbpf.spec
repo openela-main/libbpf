@@ -4,11 +4,11 @@
 # used as kernel tar.
 
 # RHEL kernel version-release
-%define kver   5.14.0-234
+%define kver   5.14.0-424
 %define source linux-%{kver}.el9
 
 Name:           libbpf
-Version:        1.0.0
+Version:        1.3.0
 Release:        2%{?dist}
 Summary:        Libbpf library
 
@@ -74,6 +74,24 @@ popd
 %{_libdir}/libbpf.a
 
 %changelog
+* Wed Feb 07 2024  - 1.3.0-2
+- Fix bug in bpf_xdp_query causing stack corruption (RHEL-26037)
+
+* Tue Jan 16 2024  - 1.3.0-1
+- Update to BPF 6.6 rebase (RHEL-10695)
+
+* Mon Jul 03 2023 Viktor Malik <vmalik@redhat.com> - 1.2.0-1
+- Update to BPF 6.3 rebase
+- Resolves: rhbz#2178933
+
+* Tue May 16 2023 Viktor Malik <vmalik@redhat.com> - 1.1.0-2
+- Update to BPF 6.2 rebase
+- Resolves: rhbz#2178932
+
+* Thu Mar 30 2023 Viktor Malik <vmalik@redhat.com> - 2:1.1.0-1
+- Update to BPF 6.1 rebase
+- Resolves: rhbz#2178931
+
 * Thu Jan 19 2023 Viktor Malik <vmalik@redhat.com> - 2:1.0.0-2
 - Update to BPF 6.0 rebase
 - Resolves: rhbz#2159763

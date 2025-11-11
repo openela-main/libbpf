@@ -4,12 +4,13 @@
 # used as kernel tar.
 
 # RHEL kernel version-release
-%define kver   6.12.0-32
-%define source linux-%{kver}%{?dist}
+%define kver   6.12.0-103
+%define kdist  .el10
+%define source linux-%{kver}%{kdist}
 
 Name:           libbpf
-Version:        1.5.0
-Release:        4%{?dist}
+Version:        1.6.0
+Release:        3%{?dist}
 Summary:        Libbpf library
 
 License:        LGPL-2.1-only OR BSD-2-Clause
@@ -72,6 +73,14 @@ pushd tools/lib/bpf
 %{_libdir}/libbpf.a
 
 %changelog
+* Fri Jul 04 2025 Viktor Malik <vmalik@redhat.com> - 2:1.6.0-2
+- Update to kernel rebase 6.14
+- Resolves: RHEL-78917
+
+* Tue May 20 2025 Viktor Malik <vmalik@redhat.com> - 2:1.6.0-1
+- Update to kernel rebase 6.13
+- Resolves: RHEL-91129
+
 * Tue Dec 10 2024 Viktor Malik <vmalik@redhat.com> - 2:1.5.0-4
 - Rebuild after kernel rebase to 6.12
 - Resolves: RHEL-63890

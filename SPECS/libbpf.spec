@@ -4,12 +4,12 @@
 # used as kernel tar.
 
 # RHEL kernel version-release
-%define kver   5.14.0-598
+%define kver   5.14.0-647
 %define source linux-%{kver}.el9
 
 Name:           libbpf
 Version:        1.5.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Libbpf library
 
 License:        LGPLv2 or BSD
@@ -74,6 +74,9 @@ popd
 %{_libdir}/libbpf.a
 
 %changelog
+* Fri Dec 05 2025 Viktor Malik <vmalik@redhat.com> - 2:1.5.0-3
+- Update to BPF 6.17 stable backport (RHEL-118560)
+
 * Wed Jul 09 2025 Viktor Malik <vmalik@redhat.com> - 2:1.5.0-2
 - Update to BPF 6.14 stable backport (RHEL-99685)
 
